@@ -20,9 +20,10 @@ class ViewController: UIViewController {
         
         let upperLeftLabel = makeLabel(withText: "upperLeft")
         let upperRightLabel = makeLabel(withText: "upperRight")
-        let underLeftLabel = makeLabel(withText: "underLeft")
+        let underLeftLabel = makeSecondaryLabel(withText: "underLeft")
         let underRightLabel = makeLabel(withText: "underRight")
         let payBtn = makeButton(withText: "Pay Bill")
+        let backGroundView = makeView()
         
         
         view.addSubview(upperLeftLabel)
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
         view.addSubview(underLeftLabel)
         view.addSubview(underRightLabel)
         view.addSubview(payBtn)
+        view.addSubview(backGroundView)
         
         
         
@@ -47,6 +49,14 @@ class ViewController: UIViewController {
         payBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -150).isActive = true
         
         
+        //centralise to X axis and Y axis
+        backGroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        backGroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        // size explicitly
+        backGroundView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        backGroundView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        
         
         
     }
@@ -62,6 +72,33 @@ class ViewController: UIViewController {
         label.backgroundColor = .blue
         
         return label
+        
+    }
+    
+    //UILabel is a view that displays one or more lines of informational text.
+    func makeSecondaryLabel(withText text: String) -> UILabel{
+        
+        let label = UILabel()
+        
+        //a control is not goinng to participate in the auto layout if I forget to add this
+        label.translatesAutoresizingMaskIntoConstraints = false //* Much important
+        label.text = text
+        label.backgroundColor = .yellow
+        label.textColor = .blue
+        
+        
+        return label
+        
+    }
+    
+    func makeView() -> UIView{
+        
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        
+        return view
+        
         
     }
     
