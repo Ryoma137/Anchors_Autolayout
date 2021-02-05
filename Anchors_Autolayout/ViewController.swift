@@ -52,9 +52,22 @@ class ViewController: UIViewController {
         //centralise to X axis and Y axis
         backGroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         backGroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         // size explicitly
-        backGroundView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        backGroundView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+      //  backGroundView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+      //  backGroundView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        
+        //size dynamically (pinning)
+        
+        //width
+        backGroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        backGroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        
+        //height
+        backGroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        backGroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -100).isActive = true
+        
         
         
         
