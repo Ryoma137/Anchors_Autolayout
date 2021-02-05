@@ -33,44 +33,43 @@ class ViewController: UIViewController {
         view.addSubview(payBtn)
         view.addSubview(backGroundView)
         
+        NSLayoutConstraint.activate([
         
         
+            upperLeftLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 8),
+            upperLeftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 8),
+            upperRightLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 8),
+            upperRightLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -8),
+            underLeftLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 8),
+            underLeftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 8),
+            underRightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 8),
+            underRightLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -8),
+            
+            payBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -100),
+            payBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -150),
+            
+            
+            //centralise to X axis and Y axis
+            backGroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            backGroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            // size explicitly
+          //  backGroundView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+          //  backGroundView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+            
+            
+            //size dynamically (pinning)
+            
+            //width
+            backGroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            backGroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            //height
+            backGroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            backGroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -100)
+            
         
-        upperLeftLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 8).isActive = true
-        upperLeftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 8).isActive = true
-        upperRightLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 8).isActive = true
-        upperRightLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -8).isActive = true
-        underLeftLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 8).isActive = true
-        underLeftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 8).isActive = true
-        underRightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 8).isActive = true
-        underRightLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -8).isActive = true
-        
-        payBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -100).isActive = true
-        payBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -150).isActive = true
-        
-        
-        //centralise to X axis and Y axis
-        backGroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        backGroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        // size explicitly
-      //  backGroundView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-      //  backGroundView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        
-        //size dynamically (pinning)
-        
-        //width
-        backGroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        backGroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        
-        //height
-        backGroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
-        backGroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -100).isActive = true
-        
-        
-        
-        
+        ])
         
     }
     
